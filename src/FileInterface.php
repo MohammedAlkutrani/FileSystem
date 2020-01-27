@@ -87,11 +87,19 @@ interface FileInterface
      * @return bool
      */
     public function isExtension($file, $extension) : bool;
+
+    /**
+     * Delete the given file.
+     * 
+     * @param $file
+     * 
+     * @return bool
+     */
+    public function delete($file) : bool;
     // public function read($file);
     // public function canRead($file) : bool;
     // public function remane($file,$name);
     // public function get($file);
-    // public function delete($file);
     // public function move($file,$path);
     // public function getPath($file);
     // public function isDirectory($file);

@@ -70,4 +70,14 @@ class LocalTest extends TestCase
         $isExtension = $file->isExtension(__DIR__.'/../files/man.txt','text/plain');
         $this->assertEquals(true,$isExtension);
     }
+
+    public function testDelete()
+    {
+        $file = new File(new Local);
+        $isCreated = $file->writeOrCreate(__DIR__.'/../files/deleted.txt','mohammed');
+        $this->assertEquals(true,$isCreated);
+
+        $isDeleted = $file->delete(__DIR__.'/../files/deleted.txt');
+        $this->assertEquals(true,$isDeleted);
+    }
 }

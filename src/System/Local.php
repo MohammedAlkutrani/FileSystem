@@ -131,4 +131,16 @@ class Local implements FileInterface
     {
         return $this->getExtension($file) == $extension;
     }
+
+    /**
+     * Delete the given file.
+     * 
+     * @param $file
+     * 
+     * @return bool
+     */
+    public function delete($file) : bool
+    {
+        return unlink($file);
+    }
 }

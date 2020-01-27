@@ -121,4 +121,16 @@ class File
     {
         return $this->fileSystem->isExtension($file, $extension);
     }
+
+    /**
+     * Delete the given file.
+     * 
+     * @param $file
+     * 
+     * @return bool
+     */
+    public function delete($file) : bool
+    {
+        return $this->fileSystem->delete($file);
+    }
 }
