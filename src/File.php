@@ -35,4 +35,16 @@ class File
     {
         return $this->fileSystem->isWritable($file);
     }
+
+    /**
+     * Determine if file is exists.
+     * 
+     * @param $file
+     * 
+     * @return bool
+     */
+    public function exists($file) : bool
+    {
+        return $this->fileSystem->exists($file);
+    }
 }

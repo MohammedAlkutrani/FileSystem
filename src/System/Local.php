@@ -41,5 +41,17 @@ class Local implements FileInterface
     {
         return is_writable($file);
     }
+
+    /**
+     * Determine if file is exists.
+     * 
+     * @param $file
+     * 
+     * @return bool
+     */
+    public function exists($file) : bool
+    {
+        return file_exists($file);
+    }
  
 }

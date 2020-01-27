@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 
 class LocalTest extends TestCase
 {
-    public function testWrite()
+    public function testWriteOrCreate()
     {
         $file = new File(new Local);
         $isCreated = $file->writeOrCreate(__DIR__.'/../files/man.txt','mohammed');
@@ -18,7 +18,14 @@ class LocalTest extends TestCase
     public function testIsWriteable()
     {
         $file = new File(new Local);
-        $isCreated = $file->isWritable(__DIR__.'/../files/man.txt');
-        $this->assertEquals(true,$isCreated);
+        $isWriteable = $file->isWritable(__DIR__.'/../files/man.txt');
+        $this->assertEquals(true,$isWriteable);
+    }
+
+    public function testExists()
+    {
+        $file = new File(new Local);
+        $isExists = $file->exists(__DIR__.'/../files/man.txt');
+        $this->assertEquals(true,$isExists);
     }
 }
