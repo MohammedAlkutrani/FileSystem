@@ -68,12 +68,20 @@ interface FileInterface
      * @return int
      */
     public function lastModified($file) : int;
+
+    /**
+     * Returns the type of the given file.
+     * 
+     * @param $file
+     * 
+     * @return string
+     */
+    public function getExtension($file) : string;
     // public function read($file);
     // public function canRead($file) : bool;
     // public function remane($file,$name);
     // public function get($file);
     // public function delete($file);
-    // public function getExtension($file);
     // public function isExtension($file);
     // public function move($file,$path);
     // public function getPath($file);

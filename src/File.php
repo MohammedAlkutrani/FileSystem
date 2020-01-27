@@ -96,4 +96,16 @@ class File
     {
         return $this->fileSystem->lastModified($file);
     }
+
+    /**
+     * Returns the type of the given file.
+     * 
+     * @param $file
+     * 
+     * @return string
+     */
+    public function getExtension($file) : string
+    {
+        return $this->fileSystem->getExtension($file);
+    }
 }

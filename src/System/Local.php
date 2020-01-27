@@ -106,4 +106,16 @@ class Local implements FileInterface
     {
         return fileatime($file);
     }
+
+    /**
+     * Returns the type of the given file.
+     * 
+     * @param $file
+     * 
+     * @return string
+     */
+    public function getExtension($file) : string
+    {
+        return mime_content_type($file);
+    }
 }

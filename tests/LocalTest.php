@@ -56,4 +56,11 @@ class LocalTest extends TestCase
         $lastModified = $file->lastModified(__DIR__.'/../files/man.txt');
         $this->assertEquals($file->lastModified(__DIR__.'/../files/man.txt'),$lastModified);
     }
+
+    public function testGetExtension()
+    {
+        $file = new File(new Local);
+        $extension = $file->getExtension(__DIR__.'/../files/man.txt');
+        $this->assertEquals('text/plain',$extension);
+    }
 }
