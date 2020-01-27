@@ -28,4 +28,11 @@ class LocalTest extends TestCase
         $isExists = $file->exists(__DIR__.'/../files/man.txt');
         $this->assertEquals(true,$isExists);
     }
+
+    public function testWrite()
+    {
+        $file = new File(new Local);
+        $isCreated = $file->write(__DIR__.'/../files/man.txt','new contant');
+        $this->assertEquals(true,$isCreated);
+    }
 }

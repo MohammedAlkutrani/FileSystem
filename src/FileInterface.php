@@ -31,7 +31,16 @@ interface FileInterface
      * @return bool
      */
     public function exists($file) : bool;
-    // public function write($file, $content);
+
+    /**
+     * Write in file.
+     * 
+     * @param $file
+     * @param $content
+     * 
+     * @return bool
+     */
+    public function write($file, $content) : bool;
     // public function read($file);
     // public function canRead($file) : bool;
     // public function isFile($file) : bool;

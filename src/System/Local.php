@@ -53,5 +53,22 @@ class Local implements FileInterface
     {
         return file_exists($file);
     }
+
+    /**
+     * Write in file.
+     * 
+     * @param $file
+     * @param $content
+     * 
+     * @return bool
+     */
+    public function write($file, $content) : bool
+    {
+        if(!$this->exists($file) || !$this->isWritable($file)) {
+            return false;
+        }
+        
+        return $this->writeOrCreate($file,$content);
+    }
  
 }

@@ -47,4 +47,17 @@ class File
     {
         return $this->fileSystem->exists($file);
     }
+
+    /**
+     * Write in file.
+     * 
+     * @param $file
+     * @param $content
+     * 
+     * @return bool
+     */
+    public function write($file, $content) : bool
+    {
+        return $this->fileSystem->write($file, $content);
+    }
 }
