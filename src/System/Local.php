@@ -94,4 +94,16 @@ class Local implements FileInterface
     {
         return filesize($file);
     }
+
+    /**
+     * Getting the last access time.
+     * 
+     * @param $file
+     * 
+     * @return int
+     */
+    public function lastModified($file) : int
+    {
+        return fileatime($file);
+    }
 }

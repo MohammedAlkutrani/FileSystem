@@ -59,9 +59,17 @@ interface FileInterface
      * @return int
      */
     public function size($file) : int;
+
+    /**
+     * Getting the last access time.
+     * 
+     * @param $file
+     * 
+     * @return int
+     */
+    public function lastModified($file) : int;
     // public function read($file);
     // public function canRead($file) : bool;
-    // public function lastModified($file) : bool;
     // public function remane($file,$name);
     // public function get($file);
     // public function delete($file);

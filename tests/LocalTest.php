@@ -49,4 +49,11 @@ class LocalTest extends TestCase
         $fileSize = $file->size(__DIR__.'/../files/man.txt');
         $this->assertEquals($file->size(__DIR__.'/../files/man.txt'),$fileSize);
     }
+
+    public function testLastModified()
+    {
+        $file = new File(new Local);
+        $lastModified = $file->lastModified(__DIR__.'/../files/man.txt');
+        $this->assertEquals($file->lastModified(__DIR__.'/../files/man.txt'),$lastModified);
+    }
 }

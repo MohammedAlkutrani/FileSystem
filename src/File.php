@@ -84,4 +84,16 @@ class File
     {
         return $this->fileSystem->size($file);
     }
+
+    /**
+     * Getting the last access time.
+     * 
+     * @param $file
+     * 
+     * @return int
+     */
+    public function lastModified($file) : int
+    {
+        return $this->fileSystem->lastModified($file);
+    }
 }
