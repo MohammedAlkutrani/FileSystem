@@ -82,4 +82,16 @@ class Local implements FileInterface
     {
         return is_file($file);
     }
+
+    /**
+     * Getting file size.
+     * 
+     * @param $file
+     * 
+     * @return int
+     */
+    public function size($file) : int
+    {
+        return filesize($file);
+    }
 }

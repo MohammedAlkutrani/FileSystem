@@ -50,10 +50,18 @@ interface FileInterface
      * @return bool
      */
     public function isFile($file) : bool;
+
+    /**
+     * Getting file size.
+     * 
+     * @param $file
+     * 
+     * @return int
+     */
+    public function size($file) : int;
     // public function read($file);
     // public function canRead($file) : bool;
     // public function lastModified($file) : bool;
-    // public function size($file);
     // public function remane($file,$name);
     // public function get($file);
     // public function delete($file);

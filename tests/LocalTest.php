@@ -42,4 +42,11 @@ class LocalTest extends TestCase
         $isFile = $file->isFile(__DIR__.'/../files/man.txt');
         $this->assertEquals(true,$isFile);
     }
+
+    public function testFileSize()
+    {
+        $file = new File(new Local);
+        $fileSize = $file->size(__DIR__.'/../files/man.txt');
+        $this->assertEquals($file->size(__DIR__.'/../files/man.txt'),$fileSize);
+    }
 }

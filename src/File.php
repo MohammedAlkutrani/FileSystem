@@ -72,4 +72,16 @@ class File
     {
         return $this->fileSystem->isFile($file);
     }
+
+    /**
+     * Getting file size.
+     * 
+     * @param $file
+     * 
+     * @return int
+     */
+    public function size($file) : int
+    {
+        return $this->fileSystem->size($file);
+    }
 }
