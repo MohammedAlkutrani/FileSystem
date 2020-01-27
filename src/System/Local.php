@@ -67,8 +67,19 @@ class Local implements FileInterface
         if(!$this->exists($file) || !$this->isWritable($file)) {
             return false;
         }
-        
+
         return $this->writeOrCreate($file,$content);
     }
  
+    /**
+     * Determine if it's a file.
+     * 
+     * @param $file
+     * 
+     * @return bool
+     */
+    public function isFile($file) : bool
+    {
+        return is_file($file);
+    }
 }

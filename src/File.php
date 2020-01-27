@@ -60,4 +60,16 @@ class File
     {
         return $this->fileSystem->write($file, $content);
     }
+
+    /**
+     * Determine if it's a file.
+     * 
+     * @param $file
+     * 
+     * @return bool
+     */
+    public function isFile($file) : bool
+    {
+        return $this->fileSystem->isFile($file);
+    }
 }

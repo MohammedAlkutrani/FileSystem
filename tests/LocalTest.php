@@ -35,4 +35,11 @@ class LocalTest extends TestCase
         $isCreated = $file->write(__DIR__.'/../files/man.txt','new contant');
         $this->assertEquals(true,$isCreated);
     }
+
+    public function testIsFile()
+    {
+        $file = new File(new Local);
+        $isFile = $file->isFile(__DIR__.'/../files/man.txt');
+        $this->assertEquals(true,$isFile);
+    }
 }

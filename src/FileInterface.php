@@ -41,9 +41,17 @@ interface FileInterface
      * @return bool
      */
     public function write($file, $content) : bool;
+
+    /**
+     * Determine if it's a file.
+     * 
+     * @param $file
+     * 
+     * @return bool
+     */
+    public function isFile($file) : bool;
     // public function read($file);
     // public function canRead($file) : bool;
-    // public function isFile($file) : bool;
     // public function lastModified($file) : bool;
     // public function size($file);
     // public function remane($file,$name);
