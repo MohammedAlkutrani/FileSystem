@@ -118,4 +118,17 @@ class Local implements FileInterface
     {
         return mime_content_type($file);
     }
+
+    /**
+     * Check for the given extension.
+     * 
+     * @param $file
+     * @param $extension
+     * 
+     * @return bool
+     */
+    public function isExtension($file, $extension) : bool
+    {
+        return $this->getExtension($file) == $extension;
+    }
 }

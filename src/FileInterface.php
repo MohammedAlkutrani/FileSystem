@@ -77,12 +77,21 @@ interface FileInterface
      * @return string
      */
     public function getExtension($file) : string;
+
+    /**
+     * Check for the given extension.
+     * 
+     * @param $file
+     * @param $extension
+     * 
+     * @return bool
+     */
+    public function isExtension($file, $extension) : bool;
     // public function read($file);
     // public function canRead($file) : bool;
     // public function remane($file,$name);
     // public function get($file);
     // public function delete($file);
-    // public function isExtension($file);
     // public function move($file,$path);
     // public function getPath($file);
     // public function isDirectory($file);

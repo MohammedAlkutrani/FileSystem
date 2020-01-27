@@ -63,4 +63,11 @@ class LocalTest extends TestCase
         $extension = $file->getExtension(__DIR__.'/../files/man.txt');
         $this->assertEquals('text/plain',$extension);
     }
+
+    public function testIsExtension()
+    {
+        $file = new File(new Local);
+        $isExtension = $file->isExtension(__DIR__.'/../files/man.txt','text/plain');
+        $this->assertEquals(true,$isExtension);
+    }
 }

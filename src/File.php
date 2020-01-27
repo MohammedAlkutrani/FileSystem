@@ -108,4 +108,17 @@ class File
     {
         return $this->fileSystem->getExtension($file);
     }
+
+    /**
+     * Check for the given extension.
+     * 
+     * @param $file
+     * @param $extension
+     * 
+     * @return bool
+     */
+    public function isExtension($file, $extension) : bool
+    {
+        return $this->fileSystem->isExtension($file, $extension);
+    }
 }
