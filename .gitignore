@@ -1,4 +1,5 @@
 /vendor
 composer.lock
+/files
 .phpunit.result.cache
 index.php
