@@ -23,4 +23,16 @@ class File
     {
         return $this->fileSystem->writeOrCreate($file, $content);
     }
+
+    /**
+     * Determine if file is writable.
+     * 
+     * @param $file
+     * 
+     * @return bool
+     */
+    public function isWritable($file) : bool
+    {
+        return $this->fileSystem->isWritable($file);
+    }
 }

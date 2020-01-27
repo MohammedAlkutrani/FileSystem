@@ -29,5 +29,17 @@ class Local implements FileInterface
 
         return true;
     }
+
+    /**
+     * Determine if file is writable.
+     * 
+     * @param $file
+     * 
+     * @return bool
+     */
+    public function isWritable($file) : bool
+    {
+        return is_writable($file);
+    }
  
 }

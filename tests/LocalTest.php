@@ -14,4 +14,11 @@ class LocalTest extends TestCase
         $isCreated = $file->writeOrCreate(__DIR__.'/../files/man.txt','mohammed');
         $this->assertEquals(true,$isCreated);
     }
+
+    public function testIsWriteable()
+    {
+        $file = new File(new Local);
+        $isCreated = $file->isWritable(__DIR__.'/../files/man.txt');
+        $this->assertEquals(true,$isCreated);
+    }
 }

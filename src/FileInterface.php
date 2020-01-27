@@ -13,6 +13,14 @@ interface FileInterface
      * @return bool
      */
     public function writeOrCreate($file, $content) : bool;
+
+    /**
+     * Determine if file is writable.
+     * 
+     * @param $file
+     * 
+     * @return bool
+     */
     public function isWritable($file) : bool;
     // public function write($file, $content);
     // public function read($file);
