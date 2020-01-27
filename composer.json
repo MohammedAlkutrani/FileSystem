@@ -1,0 +1,21 @@
+{
+    "name": "mohammedalkutrani/file-system",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mohammed Alkutrani",
+            "email": "mohammedalkutrani@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "FileSystem\\":"./src" 
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^8"
+    }
+}
