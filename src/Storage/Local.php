@@ -1,10 +1,8 @@
 <?php 
 
-namespace FileSystem\System;
+namespace FileSystem\Storage;
 
 use FileSystem\FileInterface;
-use RecursiveDirectoryIterator;
-use RecursiveTreeIterator;
 
 class Local implements FileInterface
 {   

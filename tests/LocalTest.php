@@ -3,7 +3,7 @@
 namespace Test\FileSystem;
 
 use FileSystem\File;
-use FileSystem\System\Local;
+use FileSystem\Storage\Local;
 use PHPUnit\Framework\TestCase;
 
 class LocalTest extends TestCase
