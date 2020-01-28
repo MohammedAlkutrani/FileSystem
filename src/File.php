@@ -184,4 +184,17 @@ class File
     {
         return $this->fileSystem->isDirectory($directory);
     }
+
+    /**
+     * Deleting an empyt directory
+     * 
+     * @param $directory
+     * 
+     * @return bool
+     */
+    public function deleteDirectory($directory) : bool
+    {
+        return $this->fileSystem->deleteDirectory($directory);
+    }
+    
 }

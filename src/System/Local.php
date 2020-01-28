@@ -3,6 +3,8 @@
 namespace FileSystem\System;
 
 use FileSystem\FileInterface;
+use RecursiveDirectoryIterator;
+use RecursiveTreeIterator;
 
 class Local implements FileInterface
 {   
@@ -211,5 +213,27 @@ class Local implements FileInterface
     public function isDirectory($directory) : bool
     {
         return is_dir($directory);
+    }
+
+    /**
+     * Deleting an empyt directory
+     * 
+     * @param $directory
+     * 
+     * @return bool
+     */
+    public function deleteDirectory($directory) : bool
+    {
+        if(!$this->isDirectory($directory)) {
+            return false;
+        }
+
+        $directoryContent = array_diff(scandir($directory),['.','..']);
+
+        if($directoryContent) {
+            return false;
+        }
+
+        return rmdir($directory);
     }
 }

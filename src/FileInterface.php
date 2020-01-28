@@ -135,6 +135,15 @@ interface FileInterface
      * @return bool
      */
     public function isDirectory($directory) : bool;
+
+    /**
+     * Deleting an empyt directory
+     * 
+     * @param $directory
+     * 
+     * @return bool
+     */
+    public function deleteDirectory($directory) : bool;
     // public function download($directory) : bool;
     // public function upload($directory) : bool;
     // public function read($file);

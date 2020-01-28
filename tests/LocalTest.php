@@ -108,4 +108,11 @@ class LocalTest extends TestCase
         $isIt = $file->isDirectory(__DIR__.'/../files/moh');
         $this->assertEquals(true,$isIt);
     }
+
+    public function testDeleteDirectory()
+    {
+        $file = new File(new Local);
+        $isDeleted = $file->deleteDirectory(__DIR__.'/../files/moh');
+        $this->assertEquals(true,$isDeleted);
+    }
 }
