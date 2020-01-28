@@ -3,3 +3,4 @@ composer.lock
 /files
 .phpunit.result.cache
 index.php
+/file

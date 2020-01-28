@@ -94,4 +94,11 @@ class LocalTest extends TestCase
         $isMoved = $file->move(__DIR__.'/../files/man.txt',__DIR__.'/../file/man.txt');
         $this->assertEquals(true,$isMoved);
     }
+
+    public function testMkdir()
+    {
+        $file = new File(new Local);
+        $isCreated = $file->mkdir(__DIR__.'/../files','moh');
+        $this->assertEquals(true,$isCreated);
+    }
 }

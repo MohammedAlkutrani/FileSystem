@@ -159,4 +159,17 @@ class File
     {
         return $this->fileSystem->move($file,$to);
     }
+
+    /**
+     * Creating new directory.
+     * 
+     * @param $path
+     * @param $name
+     * 
+     * @return bool
+     */
+    public function mkdir($path, $name, $mode = null) : bool
+    {
+        return $this->fileSystem->mkdir($path, $name, $mode = null);
+    }
 }

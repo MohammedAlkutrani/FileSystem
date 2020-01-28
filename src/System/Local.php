@@ -178,4 +178,21 @@ class Local implements FileInterface
 
         return true;
     }
+
+    /**
+     * Creating new directory.
+     * 
+     * @param $path
+     * @param $name
+     * 
+     * @return bool
+     */
+    public function mkdir($path, $name, $mode = null) : bool
+    {
+        if(!$mode) {
+            return mkdir($path.DIRECTORY_SEPARATOR.$name);
+        }
+        
+        return mkdir($path.DIRECTORY_SEPARATOR.$name, $mode);
+    }
 }

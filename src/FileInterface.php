@@ -116,7 +116,16 @@ interface FileInterface
      * @return bool
      */
     public function move($file,$to) : bool;
-    // public function mkdir($directory) : bool;
+
+    /**
+     * Creating new directory.
+     * 
+     * @param $path
+     * @param $name
+     * 
+     * @return bool
+     */
+    public function mkdir($path, $name, $mode = null) : bool;
     // public function download($directory) : bool;
     // public function upload($directory) : bool;
     // public function read($file);
@@ -125,5 +134,4 @@ interface FileInterface
     // public function get($file);
     // public function getPath($file);
     // public function isDirectory($file);
-
 }
