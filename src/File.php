@@ -146,4 +146,17 @@ class File
     {
         return $this->fileSystem->copy($file,$to);
     }
+
+    /**
+     * Moving the file to another directory.
+     * 
+     * @param $file
+     * @param $to
+     * 
+     * @return bool
+     */
+    public function move($file,$to) : bool
+    {
+        return $this->fileSystem->move($file,$to);
+    }
 }

@@ -156,4 +156,26 @@ class Local implements FileInterface
     {
         return copy($file,$to);
     }
+
+    /**
+     * Moving the file to another directory.
+     * 
+     * @param $file
+     * @param $to
+     * 
+     * @return bool
+     */
+    public function move($file,$to) : bool
+    {
+        if(!$this->copy($file,$to)) {
+            return false;
+        }
+        
+        if(!$this->delete($file)) {
+            $this->delete($to);
+            return false;
+        }
+
+        return true;
+    }
 }

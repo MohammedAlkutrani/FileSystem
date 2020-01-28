@@ -106,6 +106,16 @@ interface FileInterface
      * @return bool
      */
     public function copy($file,$to) : bool;
+
+    /**
+     * Moving the file to another directory.
+     * 
+     * @param $file
+     * @param $to
+     * 
+     * @return bool
+     */
+    public function move($file,$to) : bool;
     // public function mkdir($directory) : bool;
     // public function download($directory) : bool;
     // public function upload($directory) : bool;
@@ -113,7 +123,6 @@ interface FileInterface
     // public function canRead($file) : bool;
     // public function remane($file,$name);
     // public function get($file);
-    // public function move($file,$path);
     // public function getPath($file);
     // public function isDirectory($file);
 

@@ -87,4 +87,11 @@ class LocalTest extends TestCase
         $isCopied = $file->copy(__DIR__.'/../files/man.txt',__DIR__.'/../files/manCopy.txt');
         $this->assertEquals(true,$isCopied);
     }
+
+    public function testMove()
+    {
+        $file = new File(new Local);
+        $isMoved = $file->move(__DIR__.'/../files/man.txt',__DIR__.'/../file/man.txt');
+        $this->assertEquals(true,$isMoved);
+    }
 }
