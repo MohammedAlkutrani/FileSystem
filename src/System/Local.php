@@ -189,10 +189,27 @@ class Local implements FileInterface
      */
     public function mkdir($path, $name, $mode = null) : bool
     {
+        if($this->isDirectory($path.DIRECTORY_SEPARATOR.$name))
+        {
+            return false;
+        }
+        
         if(!$mode) {
             return mkdir($path.DIRECTORY_SEPARATOR.$name);
         }
         
         return mkdir($path.DIRECTORY_SEPARATOR.$name, $mode);
+    }
+
+    /**
+     * Creating new directory.
+     * 
+     * @param $directory
+     * 
+     * @return bool
+     */
+    public function isDirectory($directory) : bool
+    {
+        return is_dir($directory);
     }
 }

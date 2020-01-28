@@ -172,4 +172,16 @@ class File
     {
         return $this->fileSystem->mkdir($path, $name, $mode = null);
     }
+
+    /**
+     * Creating new directory.
+     * 
+     * @param $directory
+     * 
+     * @return bool
+     */
+    public function isDirectory($directory) : bool
+    {
+        return $this->fileSystem->isDirectory($directory);
+    }
 }

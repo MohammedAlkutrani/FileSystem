@@ -101,4 +101,11 @@ class LocalTest extends TestCase
         $isCreated = $file->mkdir(__DIR__.'/../files','moh');
         $this->assertEquals(true,$isCreated);
     }
+
+    public function testIsDirectory()
+    {
+        $file = new File(new Local);
+        $isIt = $file->isDirectory(__DIR__.'/../files/moh');
+        $this->assertEquals(true,$isIt);
+    }
 }
