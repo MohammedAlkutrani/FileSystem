@@ -133,4 +133,17 @@ class File
     {
         return $this->fileSystem->delete($file);
     }
+
+    /**
+     * Copy the file to given directory.
+     * 
+     * @param $file
+     * @param $to
+     * 
+     * @return bool
+     */
+    public function copy($file,$to) : bool
+    {
+        return $this->fileSystem->copy($file,$to);
+    }
 }

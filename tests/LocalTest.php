@@ -80,4 +80,11 @@ class LocalTest extends TestCase
         $isDeleted = $file->delete(__DIR__.'/../files/deleted.txt');
         $this->assertEquals(true,$isDeleted);
     }
+
+    public function testCopy()
+    {
+        $file = new File(new Local);
+        $isCopied = $file->copy(__DIR__.'/../files/man.txt',__DIR__.'/../files/manCopy.txt');
+        $this->assertEquals(true,$isCopied);
+    }
 }

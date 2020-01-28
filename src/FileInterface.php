@@ -96,6 +96,19 @@ interface FileInterface
      * @return bool
      */
     public function delete($file) : bool;
+
+    /**
+     * Copy the file to given directory.
+     * 
+     * @param $file
+     * @param $to
+     * 
+     * @return bool
+     */
+    public function copy($file,$to) : bool;
+    // public function mkdir($directory) : bool;
+    // public function download($directory) : bool;
+    // public function upload($directory) : bool;
     // public function read($file);
     // public function canRead($file) : bool;
     // public function remane($file,$name);

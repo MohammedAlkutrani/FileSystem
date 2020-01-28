@@ -143,4 +143,17 @@ class Local implements FileInterface
     {
         return unlink($file);
     }
+
+    /**
+     * Copy the file to given directory.
+     * 
+     * @param $file
+     * @param $to
+     * 
+     * @return bool
+     */
+    public function copy($file,$to) : bool
+    {
+        return copy($file,$to);
+    }
 }
