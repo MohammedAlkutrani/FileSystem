@@ -193,7 +193,7 @@ class Local implements FileInterface
         {
             return false;
         }
-        
+
         if(!$mode) {
             return mkdir($path.DIRECTORY_SEPARATOR.$name);
         }
@@ -202,7 +202,7 @@ class Local implements FileInterface
     }
 
     /**
-     * Creating new directory.
+     * Determine if it's a directory.
      * 
      * @param $directory
      * 

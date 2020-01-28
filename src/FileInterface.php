@@ -128,7 +128,7 @@ interface FileInterface
     public function mkdir($path, $name, $mode = null) : bool;
 
     /**
-     * Creating new directory.
+     * Determine if it's a directory.
      * 
      * @param $directory
      * 

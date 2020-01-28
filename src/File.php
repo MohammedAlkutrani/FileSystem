@@ -174,7 +174,7 @@ class File
     }
 
     /**
-     * Creating new directory.
+     * Determine if it's a directory.
      * 
      * @param $directory
      * 
