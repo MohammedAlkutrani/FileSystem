@@ -3,6 +3,7 @@
 namespace FileSystem\Storage;
 
 use FileSystem\StorageInterface;
+use FileSystem\Utility;
 
 class Local implements StorageInterface
 {   
@@ -244,10 +245,10 @@ class Local implements StorageInterface
      */
     public function forceDeleteDirectory($directory) : bool
     {
-        
         if($this->isFile($directory)) {
             return false; 
         }
+
         if (!$this->deleteDirectory($directory)) {
             $directoryContent = array_diff(scandir($directory), ['.','..']);
             
@@ -265,5 +266,19 @@ class Local implements StorageInterface
         }
 
         return true;
+    }
+
+    /**
+     * Rename the file or directory
+     * 
+     * @param $fileOrDirectory
+     * 
+     * @return bool
+     */
+    public function rename($fileOrDirectory, $newName) : bool
+    {
+        $path = Utility::getRootDirectory($fileOrDirectory);
+        var_dump($path);
+        return rename($fileOrDirectory, $path.DIRECTORY_SEPARATOR.$newName);
     }
 }

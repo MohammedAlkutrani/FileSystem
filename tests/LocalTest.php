@@ -127,4 +127,15 @@ class LocalTest extends TestCase
         $isDeleted = $file->forceDeleteDirectory(__DIR__.'/../files/moh');
         $this->assertEquals(true,$isDeleted);
     }
+
+    public function testRename()
+    {
+        $file = new File(new Local);
+        $file->writeOrCreate(__DIR__.'/../files/t.txt','moh');
+        $didTheNameChanged = $file->rename(__DIR__.'/../files/t.txt','f.txt');
+        $file->delete(__DIR__.'/../files/f.txt');
+       
+        $this->assertEquals(true,$didTheNameChanged);
+    }
+    
 }

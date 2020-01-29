@@ -208,5 +208,18 @@ class File
     {
         return $this->storage->forceDeleteDirectory($directory);
     }
+
+    /**
+     * Rename the file or directory
+     * 
+     * @param $fileOrDirectory
+     * @param $newName
+     * 
+     * @return bool
+     */
+    public function rename($fileOrDirectory, $newName) : bool
+    {
+        return $this->storage->rename($fileOrDirectory, $newName);
+    }
     
 }

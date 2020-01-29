@@ -153,11 +153,21 @@ interface StorageInterface
      * @return bool
      */
     public function forceDeleteDirectory($directory) : bool;
+
+    /**
+     * Rename the file or directory.
+     * 
+     * @param $fileOrDirectory
+     * @param $newName
+     * 
+     * @return bool
+     */
+    public function rename($fileOrDirectory, $newName) : bool;
+    // public function remane($file,$name);
     // public function download($directory) : bool;
     // public function upload($directory) : bool;
     // public function read($file);
     // public function canRead($file) : bool;
-    // public function remane($file,$name);
     // public function get($file);
     // public function getPath($file);
 }
