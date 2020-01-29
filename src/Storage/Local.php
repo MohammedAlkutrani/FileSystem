@@ -2,9 +2,9 @@
 
 namespace FileSystem\Storage;
 
-use FileSystem\StroageInterface;
+use FileSystem\StorageInterface;
 
-class Local implements StroageInterface
+class Local implements StorageInterface
 {   
     /**
      * Write in file even if not exists.
@@ -233,5 +233,37 @@ class Local implements StroageInterface
         }
 
         return rmdir($directory);
+    }
+
+    /**
+     * Force directory deleting.
+     * 
+     * @param $directory
+     * 
+     * @return bool
+     */
+    public function forceDeleteDirectory($directory) : bool
+    {
+        
+        if($this->isFile($directory)) {
+            return false; 
+        }
+        if (!$this->deleteDirectory($directory)) {
+            $directoryContent = array_diff(scandir($directory), ['.','..']);
+            
+            foreach ($directoryContent as $content) {
+                if(!$this->isDirectory($directory.DIRECTORY_SEPARATOR.$content)) {
+                    $this->delete($directory.DIRECTORY_SEPARATOR.$content);
+                } else {    
+                    $this->forceDeleteDirectory($directory.DIRECTORY_SEPARATOR.$content);
+                }
+            }
+        }
+
+        if($this->isDirectory($directory)) {
+            return $this->deleteDirectory($directory);
+        }
+
+        return true;
     }
 }

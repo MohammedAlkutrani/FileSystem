@@ -115,4 +115,16 @@ class LocalTest extends TestCase
         $isDeleted = $file->deleteDirectory(__DIR__.'/../files/moh');
         $this->assertEquals(true,$isDeleted);
     }
+
+    public function testForceDeleteDirectory()
+    {
+        $file = new File(new Local);
+        $file->mkdir(__DIR__.'/../files','moh');
+        $file->writeOrCreate(__DIR__.'/../files/moh/f.txt','mohammed');
+        $file->mkdir(__DIR__.'/../files/moh','mohff');
+        $file->writeOrCreate(__DIR__.'/../files/moh/mohff/f.txt','mohammed');
+
+        $isDeleted = $file->forceDeleteDirectory(__DIR__.'/../files/moh');
+        $this->assertEquals(true,$isDeleted);
+    }
 }

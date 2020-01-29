@@ -2,7 +2,7 @@
 
 namespace FileSystem;
 
-interface StroageInterface
+interface StorageInterface
 {
     /**
      * Write in file even if not exists.
@@ -137,13 +137,22 @@ interface StroageInterface
     public function isDirectory($directory) : bool;
 
     /**
-     * Deleting an empyt directory
+     * Deleting an empyt directory.
      * 
      * @param $directory
      * 
      * @return bool
      */
     public function deleteDirectory($directory) : bool;
+
+    /**
+     * Force directory deleting.
+     * 
+     * @param $directory
+     * 
+     * @return bool
+     */
+    public function forceDeleteDirectory($directory) : bool;
     // public function download($directory) : bool;
     // public function upload($directory) : bool;
     // public function read($file);

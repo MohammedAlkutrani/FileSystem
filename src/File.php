@@ -4,11 +4,11 @@ namespace FileSystem;
 
 class File
 {
-    protected $fileSystem;
+    protected $storage;
 
-    public function __construct(StroageInterface $fileSystem)
+    public function __construct(StorageInterface $storage)
     {
-        $this->fileSystem = $fileSystem;
+        $this->storage = $storage;
     }
 
     /**
@@ -21,7 +21,7 @@ class File
      */
     public function writeOrCreate($file, $content) : bool
     {
-        return $this->fileSystem->writeOrCreate($file, $content);
+        return $this->storage->writeOrCreate($file, $content);
     }
 
     /**
@@ -33,7 +33,7 @@ class File
      */
     public function isWritable($file) : bool
     {
-        return $this->fileSystem->isWritable($file);
+        return $this->storage->isWritable($file);
     }
 
     /**
@@ -45,7 +45,7 @@ class File
      */
     public function exists($file) : bool
     {
-        return $this->fileSystem->exists($file);
+        return $this->storage->exists($file);
     }
 
     /**
@@ -58,7 +58,7 @@ class File
      */
     public function write($file, $content) : bool
     {
-        return $this->fileSystem->write($file, $content);
+        return $this->storage->write($file, $content);
     }
 
     /**
@@ -70,7 +70,7 @@ class File
      */
     public function isFile($file) : bool
     {
-        return $this->fileSystem->isFile($file);
+        return $this->storage->isFile($file);
     }
 
     /**
@@ -82,7 +82,7 @@ class File
      */
     public function size($file) : int
     {
-        return $this->fileSystem->size($file);
+        return $this->storage->size($file);
     }
 
     /**
@@ -94,7 +94,7 @@ class File
      */
     public function lastModified($file) : int
     {
-        return $this->fileSystem->lastModified($file);
+        return $this->storage->lastModified($file);
     }
 
     /**
@@ -106,7 +106,7 @@ class File
      */
     public function getExtension($file) : string
     {
-        return $this->fileSystem->getExtension($file);
+        return $this->storage->getExtension($file);
     }
 
     /**
@@ -119,7 +119,7 @@ class File
      */
     public function isExtension($file, $extension) : bool
     {
-        return $this->fileSystem->isExtension($file, $extension);
+        return $this->storage->isExtension($file, $extension);
     }
 
     /**
@@ -131,7 +131,7 @@ class File
      */
     public function delete($file) : bool
     {
-        return $this->fileSystem->delete($file);
+        return $this->storage->delete($file);
     }
 
     /**
@@ -144,7 +144,7 @@ class File
      */
     public function copy($file,$to) : bool
     {
-        return $this->fileSystem->copy($file,$to);
+        return $this->storage->copy($file,$to);
     }
 
     /**
@@ -157,7 +157,7 @@ class File
      */
     public function move($file,$to) : bool
     {
-        return $this->fileSystem->move($file,$to);
+        return $this->storage->move($file,$to);
     }
 
     /**
@@ -170,7 +170,7 @@ class File
      */
     public function mkdir($path, $name, $mode = null) : bool
     {
-        return $this->fileSystem->mkdir($path, $name, $mode = null);
+        return $this->storage->mkdir($path, $name, $mode = null);
     }
 
     /**
@@ -182,7 +182,7 @@ class File
      */
     public function isDirectory($directory) : bool
     {
-        return $this->fileSystem->isDirectory($directory);
+        return $this->storage->isDirectory($directory);
     }
 
     /**
@@ -194,7 +194,19 @@ class File
      */
     public function deleteDirectory($directory) : bool
     {
-        return $this->fileSystem->deleteDirectory($directory);
+        return $this->storage->deleteDirectory($directory);
+    }
+
+    /**
+     * Force directory deleting.
+     * 
+     * @param $directory
+     * 
+     * @return bool
+     */
+    public function forceDeleteDirectory($directory) : bool
+    {
+        return $this->storage->forceDeleteDirectory($directory);
     }
     
 }
