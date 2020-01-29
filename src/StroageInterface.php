@@ -2,7 +2,7 @@
 
 namespace FileSystem;
 
-interface FileInterface
+interface StroageInterface
 {
     /**
      * Write in file even if not exists.

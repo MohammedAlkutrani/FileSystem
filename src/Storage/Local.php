@@ -2,9 +2,9 @@
 
 namespace FileSystem\Storage;
 
-use FileSystem\FileInterface;
+use FileSystem\StroageInterface;
 
-class Local implements FileInterface
+class Local implements StroageInterface
 {   
     /**
      * Write in file even if not exists.

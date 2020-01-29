@@ -6,7 +6,7 @@ class File
 {
     protected $fileSystem;
 
-    public function __construct(FileInterface $fileSystem)
+    public function __construct(StroageInterface $fileSystem)
     {
         $this->fileSystem = $fileSystem;
     }
