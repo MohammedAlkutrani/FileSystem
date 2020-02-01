@@ -163,11 +163,22 @@ interface StorageInterface
      * @return bool
      */
     public function rename($fileOrDirectory, $newName) : bool;
-    // public function remane($file,$name);
-    // public function download($directory) : bool;
-    // public function upload($directory) : bool;
-    // public function read($file);
-    // public function canRead($file) : bool;
-    // public function get($file);
-    // public function getPath($file);
+    
+    /** */
+    public function download($directory);
+
+    /** */
+    public function upload($directory);
+
+    /** */
+    public function read($file);
+
+    /** */
+    public function canRead($file);
+
+    /** */
+    public function get($file);
+
+    /** */
+    public function getPath($file);
 }

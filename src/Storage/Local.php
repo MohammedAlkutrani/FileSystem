@@ -281,4 +281,22 @@ class Local implements StorageInterface
         var_dump($path);
         return rename($fileOrDirectory, $path.DIRECTORY_SEPARATOR.$newName);
     }
+
+    /** */
+    public function download($directory){}
+
+    /** */
+    public function upload($directory){}
+
+    /** */
+    public function read($file){}
+
+    /** */
+    public function canRead($file){}
+
+    /** */
+    public function get($file){}
+
+    /** */
+    public function getPath($file){}
 }

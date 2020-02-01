@@ -221,5 +221,23 @@ class File
     {
         return $this->storage->rename($fileOrDirectory, $newName);
     }
+
+    /** */
+    public function download($directory){}
+
+    /** */
+    public function upload($directory){}
+ 
+    /** */
+    public function read($file){}
+ 
+    /** */
+    public function canRead($file){}
+ 
+    /** */
+    public function get($file){}
+ 
+    /** */
+    public function getPath($file){}
     
 }
