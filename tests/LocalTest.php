@@ -8,32 +8,11 @@ use PHPUnit\Framework\TestCase;
 
 class LocalTest extends TestCase
 {
-    public function testWriteOrCreate()
-    {
-        $file = new File(new Local);
-        $isCreated = $file->writeOrCreate(__DIR__.'/../files/man.txt','mohammed');
-        $this->assertEquals(true,$isCreated);
-    }
-
-    public function testIsWriteable()
-    {
-        $file = new File(new Local);
-        $isWriteable = $file->isWritable(__DIR__.'/../files/man.txt');
-        $this->assertEquals(true,$isWriteable);
-    }
-
     public function testExists()
     {
         $file = new File(new Local);
         $isExists = $file->exists(__DIR__.'/../files/man.txt');
         $this->assertEquals(true,$isExists);
-    }
-
-    public function testWrite()
-    {
-        $file = new File(new Local);
-        $isCreated = $file->write(__DIR__.'/../files/man.txt','new contant');
-        $this->assertEquals(true,$isCreated);
     }
 
     public function testIsFile()
@@ -74,8 +53,6 @@ class LocalTest extends TestCase
     public function testDelete()
     {
         $file = new File(new Local);
-        $isCreated = $file->writeOrCreate(__DIR__.'/../files/deleted.txt','mohammed');
-        $this->assertEquals(true,$isCreated);
 
         $isDeleted = $file->delete(__DIR__.'/../files/deleted.txt');
         $this->assertEquals(true,$isDeleted);
@@ -119,11 +96,6 @@ class LocalTest extends TestCase
     public function testForceDeleteDirectory()
     {
         $file = new File(new Local);
-        $file->mkdir(__DIR__.'/../files','moh');
-        $file->writeOrCreate(__DIR__.'/../files/moh/f.txt','mohammed');
-        $file->mkdir(__DIR__.'/../files/moh','mohff');
-        $file->writeOrCreate(__DIR__.'/../files/moh/mohff/f.txt','mohammed');
-
         $isDeleted = $file->forceDeleteDirectory(__DIR__.'/../files/moh');
         $this->assertEquals(true,$isDeleted);
     }
@@ -131,7 +103,6 @@ class LocalTest extends TestCase
     public function testRename()
     {
         $file = new File(new Local);
-        $file->writeOrCreate(__DIR__.'/../files/t.txt','moh');
         $didTheNameChanged = $file->rename(__DIR__.'/../files/t.txt','f.txt');
         $file->delete(__DIR__.'/../files/f.txt');
        
