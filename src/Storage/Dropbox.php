@@ -9,53 +9,6 @@ class Dropbox implements StorageInterface
 {   
     // 'vMEDM7QEDBEAAAAAAAAAMuCpENmb9RLzbzeQmpoXi-nw0agSKKxnuxG3CGU7LAEL'
     /**
-     * Write in file even if not exists.
-     * 
-     * @param $file
-     * @param $content 
-     * 
-     * @return bool
-     */
-    public function writeOrCreate($file, $content) : bool
-    {
-        $local = self::getLocalInstence();
-        $dropboxClint = self::getDropboxClient();
-
-        if(!$local->writeOrCreate($file,$content)) {
-            return false;
-        }
-
-        $dropboxClint->upload('',$file);
-        return true;
-    }
-
-    /**
-     * returning new local instence.
-     * 
-     * @return FileSystem\Storage\Local
-     */
-    private static function getLocalInstence() : Local
-    {
-        return new Local;
-    }
-
-    private static function getDropboxClient() : Client
-    {
-        return new Client('vMEDM7QEDBEAAAAAAAAAMuCpENmb9RLzbzeQmpoXi-nw0agSKKxnuxG3CGU7LAEL');
-    }
-    /**
-     * Determine if file is writable.
-     * 
-     * @param $file
-     * 
-     * @return bool
-     */
-    public function isWritable($file) : bool
-    {
-        return true;
-    }
-
-    /**
      * Determine if file is exists.
      * 
      * @param $file
@@ -63,19 +16,6 @@ class Dropbox implements StorageInterface
      * @return bool
      */
     public function exists($file) : bool
-    {
-        return true;
-    }
-
-    /**
-     * Write in file.
-     * 
-     * @param $file
-     * @param $content
-     * 
-     * @return bool
-     */
-    public function write($file, $content) : bool
     {
         return true;
     }

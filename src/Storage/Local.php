@@ -7,42 +7,7 @@ use FileSystem\Utility;
 
 class Local implements StorageInterface
 {   
-    /**
-     * Write in file even if not exists.
-     * 
-     * @param $file
-     * @param $content 
-     * 
-     * @return bool
-     */
-    public function writeOrCreate($file, $content) : bool
-    {
-        if(!file_exists($file))
-        {
-            touch($file);
-            return $this->writeOrCreate($file,$content);
-        }
-        
-        if(!file_put_contents($file, $content.PHP_EOL, FILE_APPEND | LOCK_EX))
-        {
-            return false;
-        }
-
-        return true;
-    }
-
-    /**
-     * Determine if file is writable.
-     * 
-     * @param $file
-     * 
-     * @return bool
-     */
-    public function isWritable($file) : bool
-    {
-        return is_writable($file);
-    }
-
+    
     /**
      * Determine if file is exists.
      * 
@@ -53,23 +18,6 @@ class Local implements StorageInterface
     public function exists($file) : bool
     {
         return file_exists($file);
-    }
-
-    /**
-     * Write in file.
-     * 
-     * @param $file
-     * @param $content
-     * 
-     * @return bool
-     */
-    public function write($file, $content) : bool
-    {
-        if(!$this->exists($file) || !$this->isWritable($file)) {
-            return false;
-        }
-
-        return $this->writeOrCreate($file,$content);
     }
  
     /**
