@@ -1,0 +1,236 @@
+<?php 
+
+namespace FileSystem\Storage;
+
+use FileSystem\StorageInterface;
+
+class Dropbox implements StorageInterface
+{   
+    /**
+     * Write in file even if not exists.
+     * 
+     * @param $file
+     * @param $content 
+     * 
+     * @return bool
+     */
+    public function writeOrCreate($file, $content) : bool
+    {
+        return true;
+    }
+
+    /**
+     * Determine if file is writable.
+     * 
+     * @param $file
+     * 
+     * @return bool
+     */
+    public function isWritable($file) : bool
+    {
+        return true;
+    }
+
+    /**
+     * Determine if file is exists.
+     * 
+     * @param $file
+     * 
+     * @return bool
+     */
+    public function exists($file) : bool
+    {
+        return true;
+    }
+
+    /**
+     * Write in file.
+     * 
+     * @param $file
+     * @param $content
+     * 
+     * @return bool
+     */
+    public function write($file, $content) : bool
+    {
+        return true;
+    }
+ 
+    /**
+     * Determine if it's a file.
+     * 
+     * @param $file
+     * 
+     * @return bool
+     */
+    public function isFile($file) : bool
+    {
+        return true;
+    }
+
+    /**
+     * Getting file size.
+     * 
+     * @param $file
+     * 
+     * @return int
+     */
+    public function size($file) : int
+    {
+        return 0;
+    }
+
+    /**
+     * Getting the last access time.
+     * 
+     * @param $file
+     * 
+     * @return int
+     */
+    public function lastModified($file) : int
+    {
+        return 1;
+    }
+
+    /**
+     * Returns the type of the given file.
+     * 
+     * @param $file
+     * 
+     * @return string
+     */
+    public function getExtension($file) : string
+    {
+        return 'man';
+    }
+
+    /**
+     * Check for the given extension.
+     * 
+     * @param $file
+     * @param $extension
+     * 
+     * @return bool
+     */
+    public function isExtension($file, $extension) : bool
+    {
+        return true;
+    }
+
+    /**
+     * Delete the given file.
+     * 
+     * @param $file
+     * 
+     * @return bool
+     */
+    public function delete($file) : bool
+    {
+        return true;
+    }
+
+    /**
+     * Copy the file to given directory.
+     * 
+     * @param $file
+     * @param $to
+     * 
+     * @return bool
+     */
+    public function copy($file,$to) : bool
+    {
+        return true;
+    }
+
+    /**
+     * Moving the file to another directory.
+     * 
+     * @param $file
+     * @param $to
+     * 
+     * @return bool
+     */
+    public function move($file,$to) : bool
+    {
+        return true;
+    }
+
+    /**
+     * Creating new directory.
+     * 
+     * @param $path
+     * @param $name
+     * 
+     * @return bool
+     */
+    public function mkdir($path, $name, $mode = null) : bool
+    {
+        return true;
+    }
+
+    /**
+     * Determine if it's a directory.
+     * 
+     * @param $directory
+     * 
+     * @return bool
+     */
+    public function isDirectory($directory) : bool
+    {
+        return true;
+    }
+
+    /**
+     * Deleting an empyt directory
+     * 
+     * @param $directory
+     * 
+     * @return bool
+     */
+    public function deleteDirectory($directory) : bool
+    {
+        return true;
+    }
+
+    /**
+     * Force directory deleting.
+     * 
+     * @param $directory
+     * 
+     * @return bool
+     */
+    public function forceDeleteDirectory($directory) : bool
+    {
+        return true;
+    }
+
+    /**
+     * Rename the file or directory
+     * 
+     * @param $fileOrDirectory
+     * 
+     * @return bool
+     */
+    public function rename($fileOrDirectory, $newName) : bool
+    {
+        return true;
+    }
+
+    /** */
+    public function download($directory){}
+
+    /** */
+    public function upload($directory){}
+
+    /** */
+    public function read($file){}
+
+    /** */
+    public function canRead($file){}
+
+    /** */
+    public function get($file){}
+
+    /** */
+    public function getPath($file){}
+}
