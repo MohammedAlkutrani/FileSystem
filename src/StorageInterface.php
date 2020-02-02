@@ -4,25 +4,7 @@ namespace FileSystem;
 
 interface StorageInterface
 {
-    /**
-     * Write in file even if not exists.
-     * 
-     * @param $file
-     * @param $content 
-     * 
-     * @return bool
-     */
-    public function writeOrCreate($file, $content) : bool;
-
-    /**
-     * Determine if file is writable.
-     * 
-     * @param $file
-     * 
-     * @return bool
-     */
-    public function isWritable($file) : bool;
-
+    
     /**
      * Determine if file is exists.
      * 
@@ -31,16 +13,6 @@ interface StorageInterface
      * @return bool
      */
     public function exists($file) : bool;
-
-    /**
-     * Write in file.
-     * 
-     * @param $file
-     * @param $content
-     * 
-     * @return bool
-     */
-    public function write($file, $content) : bool;
 
     /**
      * Determine if it's a file.

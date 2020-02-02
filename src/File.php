@@ -12,31 +12,6 @@ class File
     }
 
     /**
-     * Write in file even if not exists.
-     * 
-     * @param $file
-     * @param $content 
-     * 
-     * @return bool
-     */
-    public function writeOrCreate($file, $content) : bool
-    {
-        return $this->storage->writeOrCreate($file, $content);
-    }
-
-    /**
-     * Determine if file is writable.
-     * 
-     * @param $file
-     * 
-     * @return bool
-     */
-    public function isWritable($file) : bool
-    {
-        return $this->storage->isWritable($file);
-    }
-
-    /**
      * Determine if file is exists.
      * 
      * @param $file
@@ -46,19 +21,6 @@ class File
     public function exists($file) : bool
     {
         return $this->storage->exists($file);
-    }
-
-    /**
-     * Write in file.
-     * 
-     * @param $file
-     * @param $content
-     * 
-     * @return bool
-     */
-    public function write($file, $content) : bool
-    {
-        return $this->storage->write($file, $content);
     }
 
     /**

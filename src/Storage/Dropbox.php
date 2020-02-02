@@ -3,9 +3,11 @@
 namespace FileSystem\Storage;
 
 use FileSystem\StorageInterface;
+use Spatie\Dropbox\Client;
 
 class Dropbox implements StorageInterface
 {   
+    // 'vMEDM7QEDBEAAAAAAAAAMuCpENmb9RLzbzeQmpoXi-nw0agSKKxnuxG3CGU7LAEL'
     /**
      * Write in file even if not exists.
      * 
@@ -16,9 +18,31 @@ class Dropbox implements StorageInterface
      */
     public function writeOrCreate($file, $content) : bool
     {
+        $local = self::getLocalInstence();
+        $dropboxClint = self::getDropboxClient();
+
+        if(!$local->writeOrCreate($file,$content)) {
+            return false;
+        }
+
+        $dropboxClint->upload('',$file);
         return true;
     }
 
+    /**
+     * returning new local instence.
+     * 
+     * @return FileSystem\Storage\Local
+     */
+    private static function getLocalInstence() : Local
+    {
+        return new Local;
+    }
+
+    private static function getDropboxClient() : Client
+    {
+        return new Client('vMEDM7QEDBEAAAAAAAAAMuCpENmb9RLzbzeQmpoXi-nw0agSKKxnuxG3CGU7LAEL');
+    }
     /**
      * Determine if file is writable.
      * 
