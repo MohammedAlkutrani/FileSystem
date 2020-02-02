@@ -7,7 +7,6 @@ use Spatie\Dropbox\Client;
 
 class Dropbox implements StorageInterface
 {   
-    // 'vMEDM7QEDBEAAAAAAAAAMuCpENmb9RLzbzeQmpoXi-nw0agSKKxnuxG3CGU7LAEL'
     /**
      * Determine if file is exists.
      * 
